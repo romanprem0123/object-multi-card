@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>multi object card</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+		<link rel="stylesheet" href="./css/style.css">
+	</head>
+	<body>
+	
+	<div id="card-list"></div>
+
+	<script>
+	
+	let cards = [
+			{
+				cardTitle:"Placement Assured Programs",
+				//cardIcon:"fa-solid fa-award",
+				cardIcon:"fa fa-trophy",
+				cardCont1:"We assure 100% Job Guarantee for committed students who completes their tasks periodically.",
+				cardCont2:"Secure top Software Development jobs."
+			},
+			{
+				cardTitle:"Career Mentoring",
+				//cardIcon:"fa-solid fa-id-card",
+				cardIcon:"fa fa-id-card",
+				cardCont1:"Tailor-made career guidance from industry experts.",
+				cardCont2:"Profile building and resume enhancement assistance."
+			},
+			{
+				cardTitle:"Interview Preparation",
+				//cardIcon:"fa-solid fa-user-tie",
+				cardIcon:"fa fa-user",
+				cardCont1:"Mock interview sessions to help you crack that technical round",
+				cardCont2:"Soft-skill training so that you leave an indelible impression at the interview"
+			}
+	]
+	console.log(cards);
+	
+	function elementCreate(element){
+	
+		// create element
+		
+		var head = document.createElement("h3"),
+			icon = document.createElement("i"),
+			cont1 = document.createElement("p"),
+			cont2 = document.createElement("p"),
+			cardSec = document.createElement("div");
+		
+		
+		// object value assign to element
+
+			head.innerHTML = element.cardTitle;
+			//icon.innerHTML = element.cardIcon;
+			cont1.innerHTML = element.cardCont1;
+			cont2.innerHTML = element.cardCont2;
+			
+			
+		// add class to element
+
+			icon.setAttribute("class",element.cardIcon);
+			cardSec.setAttribute("class","cards");
+
+		//appendchild
+		
+			cardSec.appendChild(head);
+			cardSec.appendChild(icon);
+			cardSec.appendChild(cont1);
+			cardSec.appendChild(cont2);
+			
+		//append DOM
+		
+			var cardList = document.getElementById("card-list");
+			cardList.appendChild(cardSec);
+	}		
+			
+		
+			for(let i = 0; i < cards.length; i++){
+				elementCreate(cards[i]);
+			}
+	
+	</script>
+	
+	</body>
+</html>
